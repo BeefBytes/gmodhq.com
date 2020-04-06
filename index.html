@@ -398,7 +398,7 @@
       }
 
       draw() {
-        rotateAndDrawImage(image, this.rot * (Math.PI / 180), this.x, this.y, 50, 50);
+        rotateAndDrawImage(image, this.rot * (Math.PI / 180), this.x, this.y, 150, 150);
         this.x += this.velX;
         this.y += this.velY;
         this.rot += this.velRot;
@@ -411,7 +411,7 @@
     image.addEventListener("load", () => {
       const particles = [];
 
-      for (let i = 0; i < canvas.width / 50; i++) {
+      for (let i = 0; i < canvas.width / 200; i++) {
         particles.push(new Particle(getRandom(0, canvas.width), getRandom(0, canvas.height), 0, getRandom(-1, 1), getRandom(-1, 1), 0));
       }
 
@@ -423,7 +423,7 @@
 
       requestAnimationFrame(draw);
     });
-    image.src = "./hqlogo.svg";
+    image.src = "./text.svg";
 
     resizeCanvas();
   </script>
