@@ -80,6 +80,7 @@
       right: 0;
       bottom: 0;
       pointer-events: none;
+      fill: #0000000f;
     }
 
     @media screen and (max-width: 700px) {
@@ -398,7 +399,7 @@
       }
 
       draw() {
-        rotateAndDrawImage(image, this.rot * (Math.PI / 180), this.x, this.y, 150, 150);
+        rotateAndDrawImage(image, this.rot * (Math.PI / 180), this.x, this.y, 160, 25);
         this.x += this.velX;
         this.y += this.velY;
         this.rot += this.velRot;
@@ -411,7 +412,7 @@
     image.addEventListener("load", () => {
       const particles = [];
 
-      for (let i = 0; i < canvas.width / 200; i++) {
+      for (let i = 0; i < canvas.width / 150; i++) {
         particles.push(new Particle(getRandom(0, canvas.width), getRandom(0, canvas.height), 0, getRandom(-1, 1), getRandom(-1, 1), 0));
       }
 
